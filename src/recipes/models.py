@@ -9,19 +9,19 @@ class Recipe(models.Model):
         max_length=400,
         help_text="Enter ingredients, separated by commas"
         )
-    difficulty = None
+    notes = models.TextField(default="If you'd like to add a description or notes for your recipe, add them here!")
+    pic = models.ImageField(upload_to='recipes', default='no_picture.png')
 
-    def difficulty(self):
-        ingredients = self.ingredients.split(", ")
+    def calculate_difficulty(self):
+        ingredients = [i.strip() for i in self.ingredients.split(",")]
         if self.cooking_time < 10 and len(ingredients) < 4:
-            difficulty = 'Easy'
+            return 'Easy'
         elif self.cooking_time < 10 and len(ingredients) >= 4:
-            difficulty = 'Medium'
+            return 'Medium'
         elif self.cooking_time >= 10 and len(ingredients) < 4:
-            difficulty = 'Intermediate'
-        elif self.cooking_time >= 10 and len(ingredients) >= 4:
-            difficulty = 'Hard'
-        return difficulty
+            return 'Intermediate'
+        else:
+            return 'Hard'
     
     def __str__(self):
         return str(self.name)
