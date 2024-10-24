@@ -6,11 +6,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe App</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Satisfy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
   <h1>Welcome to the Recipe App!</h1>
-  <img src="{% static 'recipes/images/welcome.jpg' %}" alt="recipes_home" width="600" height="300">
-  <a href="recipes.html" class="button">Get Started</a>
+  <br>
+  <a href="{% url 'recipes:list' %}" class="button">Get Started</a>
 </body>
 </html>

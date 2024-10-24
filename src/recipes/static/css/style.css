@@ -1,0 +1,42 @@
+/* styles.css */
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: lightgray;
+
+
+  /* Add background image */
+  background-image: url('../images/background.jpg'); /* Adjust the path as necessary */
+  background-size: cover; /* Scale the image to cover the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+h1 {
+  font-family: 'Satisfy', cursive;
+  font-weight: bold;
+  font-size: 4rem;
+  color:white;
+}
+
+a.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color:chocolate;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+a.button:hover {
+  background-color: #45a049;
+}
