@@ -1,15 +1,10 @@
 /* styles.css */
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  display: block;
   margin: 0;
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: lightgray;
 
 
   /* Add background image */
@@ -17,13 +12,73 @@ body {
   background-size: cover; /* Scale the image to cover the entire area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-attachment: fixed; /* Keep image in place while scolling */
 }
 
-h1 {
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.centered-title {
+  font-family: 'Satisfy', cursive;
+  font-weight: bold;
+  font-size: 4rem;
+  color: white;
+}
+
+/* h1 {
   font-family: 'Satisfy', cursive;
   font-weight: bold;
   font-size: 4rem;
   color:white;
+} */
+
+/* Style for the h1 with class "main-title" */
+.main-title {
+  font-size: 2.5rem;
+  margin: 20px 0; /* Adds space above and below the h1 */
+  margin-bottom: 50px;
+  font-family: 'Satisfy', cursive; /* Custom font from Google Fonts */
+  color: white;
+  text-align: center;
+}
+
+.recipe-table {
+  width: 50%;
+  margin: 0 auto; /* Center table horizontally */
+  background-color: #f9f9f9; /* Light gray background */
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table cell and header cell styling */
+.recipe-table td, .recipe-table th {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd; /* Subtle border for each cell */
+}
+
+/* Center-align images within table cells */
+.recipe-table img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Alternating row color for readability */
+.recipe-table tr:nth-child(even) {
+  background-color: #e9e9e9;
+}
+
+/* Styling for the table header row */
+.recipe-table tr:first-child {
+  background-color: chocolate; /* Darker color for header row */
+  color: white;
+  font-weight: bold;
 }
 
 a.button {
@@ -38,5 +93,5 @@ a.button {
 }
 
 a.button:hover {
-  background-color: #45a049;
+  background-color:rgb(185, 90, 23);
 }
