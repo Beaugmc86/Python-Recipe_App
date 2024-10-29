@@ -10,7 +10,11 @@ class Recipe(models.Model):
         max_length=400,
         help_text="Enter ingredients, separated by commas"
         )
-    notes = models.TextField(default="If you'd like to add a description or notes for your recipe, add them here!")
+    notes = models.TextField(
+        default="No description has been added to this recipe.", 
+        help_text="Add notes or a description here."
+        )
+    difficulty = models.CharField(max_length=20, editable=False)
     pic = models.ImageField(upload_to='recipes', default='no_picture.png')
 
     def calculate_difficulty(self):
@@ -23,6 +27,16 @@ class Recipe(models.Model):
             return 'Intermediate'
         else:
             return 'Hard'
+        
+    def save(self, *args, **kwargs):
+        # Update difficulty before saving
+        self.difficulty = self.calculate_difficulty()
+        super().save(*args, **kwargs)
+    
+    @property
+    def display_difficulty(self):
+        # Return calculated difficulty dynamically
+        return self.calculate_difficulty()
     
     def __str__(self):
         return str(self.name)
