@@ -31,12 +31,12 @@ body {
   color: white;
 }
 
-/* h1 {
+h1 {
   font-family: 'Satisfy', cursive;
   font-weight: bold;
   font-size: 4rem;
   color:white;
-} */
+}
 
 /* Style for the h1 with class "main-title" */
 .main-title {
@@ -51,6 +51,7 @@ body {
 .recipe-table {
   width: 50%;
   margin: 0 auto; /* Center table horizontally */
+  margin-bottom: 50px;
   background-color: #f9f9f9; /* Light gray background */
   border-collapse: collapse;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -79,6 +80,22 @@ body {
   background-color: chocolate; /* Darker color for header row */
   color: white;
   font-weight: bold;
+}
+
+/* CSS styling for the container */
+.detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.recipe-details {
+  padding: 20px 80px 20px 80px;
+  text-align: left;
 }
 
 a.button {
